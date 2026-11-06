@@ -1,0 +1,14 @@
+[Unit]
+Description=Hermes TV Bridge
+After=network.target
+
+[Service]
+Type=simple
+User=kb
+WorkingDirectory=/home/kb/.hermes/cache/scratch/tv-hermes-app
+ExecStart=/usr/bin/python3 /home/kb/.hermes/cache/scratch/tv-hermes-app/hermes_bridge.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
